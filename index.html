@@ -3,9 +3,317 @@
 <head>
 	<meta charset=utf-8>
 	<meta name=viewport content='width=device-width, initial-scale=1'>
+	<meta name=theme-color content=#222225>
+	<meta name=msapplication-TileColor content=#222225>
+
+	<link rel=apple-touch-icon sizes=180x180 href=assets/favicon/wrong-instruments-apple-touch-icon.png>
+	<link rel=icon type=image/svg+xml href=assets/favicon/wrong-instruments-logo-square.svg>
+
 	<title>Wrong Instruments</title>
+	<style>
+		@font-face {
+			font-family: 'Open Sans';
+			src: url('assets/opensans/opensans-variablefont.ttf');
+
+		}
+		@font-face {
+			font-family: 'Open Sans';
+			src: url('assets/opensans/opensans-italic-variablefont.ttf');
+			font-style: italic;
+		}
+
+		:root {
+			--font-main: #cccccf;
+			--font-bright: #dddddf;
+			--border-color: #555558;
+			--background-main: #222225;
+			--background-brighter: #333336;
+		}
+
+		html, body {
+			margin: 0;
+			padding: 0;
+			font-size: larger;
+			font-weight: 300;
+			line-height: 1.6em;
+		}
+
+		body {
+			background-color: var(--background-main);
+			color: var(--font-main);
+			font-family: 'Open Sans', Helvetica, sans-serif;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding-top: 2em;
+			padding-bottom: 2em;
+		}
+
+		a {
+			color: var(--font-bright);
+			white-space: nowrap;
+		}
+
+		h1, h2, h3, strong, b {
+			font-weight: 500;
+			color: var(--font-bright);
+			margin-bottom: 0;
+			margin-top: 0;
+		}
+
+		h1 {
+			font-size: 1.5em;
+		}
+
+		h2 {
+			font-size: 1.2em;
+		}
+			h2 img {
+				height: 1.5em;
+				width: auto;
+				vertical-align: -.35em;
+			}
+
+			h2 sup {
+				display: inline-block;
+				padding: 0 .5em;
+				font-size: .5em;
+				line-height: 1.5em;
+
+				background-color: var(--background-brighter);
+				border-radius: 10%;
+			}
+
+			h2 sup.type {
+
+			}
+
+			h2 sup.os {
+
+			}
+
+		h3 {
+			font-size: 1.1em;
+			font-weight: 400;
+			margin-top: 2em;
+		}
+
+		hr {
+			border: 0;
+			background-color: var(--border-color);
+			height: 1px;
+			margin-top: 2em;
+			margin-bottom: 2em;
+		}
+
+		body > * {
+			width: 60%;
+		}
+
+		header {
+			display: flex;
+			justify-content: center;
+
+			-padding-bottom: 2em;
+			margin-bottom: 2em;
+
+			-border-bottom: 1px solid var(--border-color);
+		}
+			header .logo {
+				width: 30%;
+
+			}
+				header .logo img {
+					width: 100%;
+				}
+
+		footer {
+			display: flex;
+			margin-top: 2em;
+			padding-top: 1em;
+			border-top: 1px solid var(--border-color);
+			justify-content: space-between;
+			gap: 2em;
+
+			font-size: .7em;
+		}
+			footer a {
+				color: var(--font-main);
+				margin-right: .2em;
+			}
+
+			footer a:last-child {
+				margin-right: 0;
+			}
+
+		img.dropshadow {
+			box-shadow: 0px 10px 30px 0px rgb(0, 0, 0, .5);
+			transition: box-shadow .2s;
+		}
+
+		img.dropshadow:hover {
+			box-shadow: 0px 10px 50px 0px rgb(0, 0, 0, .5);
+		}
+
+		span.midiType {
+			display: inline-block;
+			font-size: .8em;
+			padding: 0 .5em;
+			line-height: 1.5em;
+
+			background-color: var(--background-brighter);
+			border-radius: 10%;
+		}
+
+		p.distribute {
+			display: flex;
+			flex-direction: row;
+			justify-content: left;
+			gap: .5em;
+		}
+
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			padding-top: 30px;
+			height: 0;
+			overflow: hidden;
+		}
+
+		.video-container iframe,
+		.video-container object,
+		.video-container embed {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.nowrap {
+			white-space: nowrap;
+		}
+
+		.right {
+			text-align: right;
+		}
+
+		@media screen and (orientation:portrait) {
+			body {
+				font-size: large;
+			}
+			body > * {
+				width: 90%;
+			}
+		}
+	</style>
 </head>
 <body>
-	<center>hello</center>
+	<header>
+		<a href=. class=logo>
+			<img src=assets/wrong-instruments-logo-with-text.svg alt='Wrong Instruments logo'>
+		</a>
+	</header>
+	<content>
+		<h1>Hello!</h1>
+		<p>
+			We're two dudes who teamed up to create things that should help musicians be musicians. One of us is an experienced musician/sound engineer with software engineering background, one is a top-notch programmer.
+		</p>
+
+		<p>
+			Currently we have one useful plug-in for macOS and iOS (AUv3) which is called <strong>MIDI Messenger</strong>: it can send all sorts of MIDI messages <em>(surprise!)</em> triggered by incoming MIDI messages and some other events like transport or loading the project.
+		</p>
+
+		<hr>
+
+		<h2 id=midimessenger>
+			<img src=assets/mm/mm-logo-wired-1024-nobg.svg alt='Wrong Instruments MIDI Messenger logo' />
+			MIDI Messenger
+			<sup class=type>AUv3</sup>
+			<sup class=os>iOS</sup>
+			<sup class=os>macOS</sup>
+		</h2>
+		<p>
+			This plugin came to life as an answer to the lack of MIDI processors for iOS. One of us needed to send Bank/Program Change messages when a project was loaded in <a href=http://kymatica.com/apps/aum target=_blank>AUM</a>, and the only solution for this task appeared to be writing hexadecimal codes in <a href=https://audeonic.com/streambyter/ target=_blank>StreamByter</a>. That didn't feel right. So here it is. By the way, it's also available for macOS as an Audio Unit.
+		</p>
+		<p>
+			<strong>MIDI Messenger</strong> is <strong>free</strong>, no strings attached. Though, if you want to support us so we continue improving this plugin and create new ones <em>(we have many ideas, even for hardware instruments)</em>, you are very welcome to <a href=https://www.patreon.com/wronginstruments target=_blank>our Patreon page</a>.
+		</p>
+		<p>
+			<img class=dropshadow width=100% src=assets/mm/window.png alt='Wrong Instruments MIDI Messenger window'>
+		</p>
+		<p>
+			<strong>MIDI Messenger</strong> allows creating an endless list of ‘messages’ that will be sent after being triggered by incoming MIDI messages or system events.
+		</p>
+		<p>
+			Here's the list of possible triggers:
+			<span class=midiType>On Load</span>,
+			<span class=midiType>CC</span>,
+			<span class=midiType>Note On</span>,
+			<span class=midiType>Note Off</span>,
+			<span class=midiType>Transport Stop</span>,
+			<span class=midiType>Transport Start</span>,
+			<span class=midiType>Transport Continue</span>,
+			<span class=midiType>Pressure</span>
+			<br>
+			Please keep in mind that in order for Transport triggers to work, you need to pass MIDI clock to MIDI Messenger.
+		</p>
+		<p>
+			Here are possible message types:
+			<span class=midiType>CC</span>,
+			<span class=midiType>Program/Bank Change</span>,
+			<span class=midiType>Note On</span>,
+			<span class=midiType>Note Off</span>,
+			<span class=midiType>Pressure</span>,
+			<span class=midiType>Pitch Wheel</span>,
+			<span class=midiType>Sysex</span>,
+			<span class=midiType>All Sounds Off (CC)</span>
+		</p>
+		<p>
+			Messages have order, the first message to be triggered and sent is at the top. The last one is at the bottom.
+		</p>
+		<p>
+			You can specify a delay time in milliseconds so the message is sent a bit later than the trigger-event was detected. You can destroy incoming messages that triggered some messages, or pass them through. You can also reorder messages.
+		</p>
+		<p>
+			We tried to make the interface as self-explanatory as it could be. So, if you're familiar with MIDI, you should feel yourself quite comfortable. But if you have some questions, we have a walkthrough on <a href='https://youtube.com/@wronginstruments' target=_blank>our YouTube channel</a>.<!--:
+			<div class=video-container>
+				<iframe width=560 height=315 src=https://www.youtube.com/embed/Ib1zRph9LBU frameborder=0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share' allowfullscreen></iframe>
+			</div>-->
+		</p>
+		<h3 id=download>Download & install</h3>
+		<p class=distribute>
+			<a href='' target=_blank>iOS</a>
+			<a href='' target=_blank>macOS (App Store)</a>
+			<a href='' target=_blank>macOS (download)</a>
+		</p>
+		<h3>
+			<a id=future>Future plans</a>
+		</h3>
+		<p>
+			Currently, we want to add some functionality to <strong>MIDI Messenger</strong>: altering incoming MIDI messages, loading/saving preset files, direct hardware MIDI inputs and outputs, etc. If we see the demand, we're also ready to consider making a VST version for macOS, Windows and Linux.
+		</p>
+		<p>
+			In the background we're working on a very interesting virtual sampling instrument. And if things go really well, there are many hardware music/sound device ideas we have and dream to bring to life in future.
+		</p>
+		<h3 id=feedback>Feedback?</h3>
+		<p>
+			Yes, please!<br/>
+			You are always welcome to drop us an <a href=mailto:hello@wrong.band>email</a>, suggest a new feature or vote for an existing one <a href=https://wi.canny.io target=_blank>here</a>, express your thoughts in comments on <a href=https://www.facebook.com/wronginstruments target=_blank>Facebook</a>, <a href='https://www.patreon.com/wronginstruments' target=_blank>Patreon</a> and <a href=https://youtube.com/@wronginstruments target=_blank>YouTube</a>.
+		</p>
+	</content>
+	<footer>
+		<div class='left nowrap'>
+			© <a href=. >Wrong Instruments</a>
+		</div>
+		<div class='right links'>
+			<a href=mailto:hello@wrong.band>Contact</a>
+			<a href=https://www.patreon.com/wronginstruments target=_blank>Patreon</a>
+			<a href=https://youtube.com/@wronginstruments target=_blank>YouTube</a>
+			<a href=https://www.facebook.com/wronginstruments target=_blank>Facebook</a>
+			<a href=https://duck.us10.list-manage.com/subscribe?u=0dcd6e4b1869e5237996b51bb&id=cc002dec8d target=_blank>Newsletter</a>
+			<a href=https://wi.canny.io target=_blank>Feature requests/feedback</a>
+		</div>
+	</footer>
 </body>
 </html>
