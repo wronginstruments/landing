@@ -84,14 +84,6 @@
 				border-radius: 10%;
 			}
 
-			h2 sup.type {
-
-			}
-
-			h2 sup.os {
-
-			}
-
 		h3 {
 			font-size: 1.1em;
 			font-weight: 400;
@@ -121,7 +113,6 @@
 		}
 			header .logo {
 				width: 30%;
-
 			}
 				header .logo img {
 					width: 100%;
@@ -170,6 +161,7 @@
 			flex-direction: row;
 			justify-content: left;
 			gap: .5em;
+			flex-wrap: wrap;
 		}
 
 		.video-container {
@@ -206,9 +198,61 @@
 				width: 90%;
 			}
 		}
+
+		#patreonBadge {
+			display: flex;
+			position: fixed;
+			top: -40px;
+			right: -80px;
+
+			width: 200px;
+			height: 100px;
+			z-index: 1000;
+
+			flex-direction: column;
+			align-items: center;
+			justify-content: flex-end;
+			padding-top: 1em;
+
+			text-decoration: none;
+
+			transform: rotate(45deg);
+
+			background-color: var(--background-brighter);
+
+			box-shadow: 0px 10px 30px 0px rgb(255, 255, 255, 0);
+			transition: box-shadow .2s;
+		}
+
+		#patreonBadge:hover {
+			box-shadow: 0px 10px 30px 0px rgb(255, 255, 255, .1);
+		}
+			#patreonBadge * {
+				display: block;
+				--transform: rotate(-45deg);
+			}
+
+			#patreonBadge label {
+				font-size: .5em;
+				font-weight: 600;
+				cursor: pointer;
+
+			}
+
+		@media screen and (orientation:portrait){
+			header .logo {
+				width: 50%;
+			}
+		}
 	</style>
 </head>
 <body>
+	<a id=patreonBadge href=https://go.wrong.band/patreon?utm_source=wstop title='Support on Patreon' target=_blank>
+		<svg width=30px viewBox='0 0 100 97' fill=none xmlns=http://www.w3.org/2000/svg>
+			<path d='M17.6313 0V96.2305H0V0H17.6313ZM63.9285 0C83.8504 0 100 16.1496 100 36.0715C100 55.9934 83.8504 72.143 63.9285 72.143C44.0066 72.143 27.857 55.993 27.857 36.0715C27.857 16.1496 44.007 0 63.9285 0Z' fill='#FF424D'/>
+		</svg>
+		<label>Support on Patreon</label>
+	</a>
 	<header>
 		<a href=. class=logo>
 			<img src=assets/wrong-instruments-logo-with-text.svg alt='Wrong Instruments logo'>
