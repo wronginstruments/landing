@@ -282,7 +282,7 @@
 			<strong>MIDI Messenger</strong> is <strong>free</strong>, no strings attached. Though, if you want to support us so we continue improving this plugin and create new ones <em>(we have many ideas, even for hardware instruments)</em>, you are very welcome to <a href=https://go.wrong.band/patreon?utm_source=wsdsc target=_blank>our Patreon page</a>.
 		</p>
 		<p>
-			<img class=dropshadow width=100% src=assets/mm/window.png alt='Wrong Instruments MIDI Messenger window'>
+			<img class=dropshadow width=100% src=assets/mm/window-v2.png alt='Wrong Instruments MIDI Messenger window (v2)'>
 		</p>
 		<p>
 			<strong>MIDI Messenger</strong> allows creating an endless list of ‘messages’ that will be sent after being triggered by incoming MIDI messages or system events.
@@ -293,12 +293,16 @@
 			<span class=midiType>CC</span>,
 			<span class=midiType>Note On</span>,
 			<span class=midiType>Note Off</span>,
-			<span class=midiType>Transport Stop</span>,
-			<span class=midiType>Transport Start</span>,
-			<span class=midiType>Transport Continue</span>,
+			<span class=midiType>Program Change</span>,
+			<span class=midiType>MIDI Transport Start</span>,
+			<span class=midiType>MIDI Transport Stop</span>,
+			<span class=midiType>MIDI Transport Continue</span>,
+			<span class=midiType>AU HOST Transport Start</span>,
+			<span class=midiType>AU HOST Transport Stop</span>,
+			<span class=midiType>AU HOST Transport Continue</span>,
 			<span class=midiType>Pressure</span>
 			<br>
-			Please keep in mind that in order for Transport triggers to work, you need to pass MIDI clock to MIDI Messenger.
+			Please keep in mind that in order for <span class=midiType>MIDI Transport</span> triggers to work, you need to pass MIDI clock to MIDI Messenger.
 		</p>
 		<p>
 			Here are possible message types:
@@ -312,10 +316,16 @@
 			<span class=midiType>All Sounds Off (CC)</span>
 		</p>
 		<p>
-			Messages have order, the first message to be triggered and sent is at the top. The last one is at the bottom.
+			Messages have order, the first message to be triggered and sent is at the top. The last one is at the bottom. You can also send them without triggers just pressing the button next to the message.
+		</p>
+		<p>
+			You can re-route, alter and duplicate some messages using values from Triggers. For example, receiving a CC#17 with value 66, you can send the same value with a different CC number. Same woks with notes and their velocities, etc.
 		</p>
 		<p>
 			You can specify a delay time in milliseconds so the message is sent a bit later than the trigger-event was detected. You can destroy incoming messages that triggered some messages, or pass them through. You can also reorder messages.
+		</p>
+		<p>
+			In addition to saved states in the host program, the lists of messages in MIDI Messenger can be saved into files, loaded back and transferred between devices.
 		</p>
 		<p>
 			We tried to make the interface as self-explanatory as it could be. So, if you're familiar with MIDI, you should feel yourself quite comfortable. But if you have some questions, we have a walkthrough on <a href=https://go.wrong.band/youtube?utm_source=wstuts target=_blank>our YouTube channel</a>.
@@ -334,7 +344,7 @@
 			<a id=future>Future plans</a>
 		</h3>
 		<p>
-			Currently, we want to add some functionality to <strong>MIDI Messenger</strong>: altering incoming MIDI messages, loading/saving preset files, direct hardware MIDI inputs and outputs, etc. If we see the demand, we're also ready to consider making a VST version for macOS, Windows and Linux.
+			Currently, we want to add some functionality to <strong>MIDI Messenger</strong>: advanced message altering with math expressions, direct hardware MIDI inputs and outputs, etc. If we see the demand, we're also ready to consider making a VST version for macOS, Windows and Linux.
 		</p>
 		<p>
 			In the background we're working on a very interesting virtual sampling instrument. And if things go really well, there are many hardware music/sound device ideas we have and dream to bring to life in future.
@@ -354,6 +364,7 @@
 			<a href=https://go.wrong.band/patreon?utm_source=wsftr target=_blank>Patreon</a>
 			<a href=https://go.wrong.band/youtube?utm_source=wsftr target=_blank>YouTube</a>
 			<a href=https://go.wrong.band/facebook?utm_source=wsftr target=_blank>Facebook</a>
+			<a href=https://go.wrong.band/instagram?utm_source=wsftr target=_blank>Instagram</a>
 			<a href=https://go.wrong.band/newsletter?utm_source=wsftr target=_blank>Newsletter</a>
 			<a href=https://go.wrong.band/privacy-policy?utm_source=wsftr target=_blank>Privacy Policy</a>
 		</div>
