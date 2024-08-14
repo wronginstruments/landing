@@ -259,15 +259,14 @@
 	<content>
 		<h1>Hello!</h1>
 		<p>
-			We're two dudes who teamed up to create things that should help musicians be musicians. One of us is an experienced musician/sound engineer with software engineering background, one is a top-notch programmer.
+			In 2023 we teamed up to create things that should help musicians be musicians. Artyom is an experienced musician/sound engineer with software engineering background, Gleb is a top-notch programmer.
 		</p>
-
 		<p>
 			Currently we have one plug-in for macOS and iOS (AUv3) which is called <strong>MIDI Messenger</strong>: it can send all sorts of MIDI messages <em>(surprise!)</em> triggered by incoming MIDI messages and some other events like transport or loading the project.
 		</p>
 
 		<hr>
-
+		
 		<h2 id=midimessenger>
 			<img src=assets/mm/mm-logo-wired-1024-nobg.svg alt='Wrong Instruments MIDI Messenger logo' />
 			MIDI Messenger
@@ -283,19 +282,19 @@
 			<a href=https://go.wrong.band/dl-mm-dmg-v2-1 target=_blank>macOS (DMG download)</a>
 		</p>
 		<p>
-			This plugin came to life as an answer to the lack of MIDI processors for iOS. One of us needed to send Bank/Program Change messages when a project was loaded in <a href=http://kymatica.com/apps/aum target=_blank>AUM</a>, and the only solution for this task appeared to be writing hexadecimal codes in <a href=https://audeonic.com/streambyter/ target=_blank>StreamByter</a>. That didn't feel right. So here it is. By the way, it's also available for macOS as an Audio Unit.
+			This plugin came to life as an answer to the lack of utilitarian MIDI processors and DAW functionality on iOS/iPadOS. That didn't feel right. So here it is. By the way, it's also available for macOS as AUv3 plugin.
 		</p>
 		<p>
-			<strong>MIDI Messenger</strong> is <strong>free</strong>, no strings attached. Though, if you want to support us so we continue improving this plugin and create new ones <em>(we have many ideas, even for hardware instruments)</em>, you are very welcome to <a href=https://go.wrong.band/patreon?utm_source=wsdsc target=_blank>our Patreon page</a>.
+			<strong>MIDI Messenger</strong> is <strong>free</strong>, no strings attached. Though, if you want to support us so we continue improving this plugin and create new ones <em>(we have many ideas, even for hardware instruments)</em>, you are very welcome to <a href=https://go.wrong.band/patreon?utm_source=wsdsc target=_blank>our Patreon page</a>, you can also send us a tip right from the MIDI Messenger window — check the menu in the upper right corner.
 		</p>
 		<p>
 			<img class=dropshadow width=100% src=assets/mm/window-v2.1.png alt='Wrong Instruments MIDI Messenger window (v2.1)'>
 		</p>
 		<p>
-			<strong>MIDI Messenger</strong> allows creating an endless list of ‘messages’ that will be sent after being triggered by incoming MIDI messages or system events.
+			<strong>MIDI Messenger</strong> allows creating lists of ‘messages’ that will be sent after being triggered by incoming MIDI messages or system events.
 		</p>
 		<p>
-			Here's the list of possible triggers:
+			Here's the list of available triggers:
 			<span class=midiType>On Load</span>,
 			<span class=midiType>CC</span>,
 			<span class=midiType>Note On</span>,
@@ -312,7 +311,7 @@
 			Please keep in mind that in order for <span class=midiType>MIDI Transport</span> triggers to work, you need to pass MIDI clock to MIDI Messenger.
 		</p>
 		<p>
-			Here are possible message types:
+			Here are message types:
 			<span class=midiType>CC</span>,
 			<span class=midiType>Program/Bank Change</span>,
 			<span class=midiType>Note On</span>,
@@ -320,7 +319,7 @@
 			<span class=midiType>Pressure</span>,
 			<span class=midiType>Pitch Wheel</span>,
 			<span class=midiType>Sysex</span>,
-			<span class=midiType>All Sounds Off (CC)</span>
+			<span class=midiType>All Sounds Off (CC shortcut)</span>
 		</p>
 		<p>
 			Messages have order, the first message to be triggered and sent is at the top. The last one is at the bottom. You can also send them without triggers just pressing the button next to the message.
@@ -329,13 +328,16 @@
 			You can re-route, alter and duplicate some messages using values from Triggers. For example, receiving a CC#17 with value 66, you can send the same value with a different CC number. Same woks with notes and their velocities, etc.
 		</p>
 		<p>
-			You can specify a delay time in milliseconds so the message is sent a bit later than the trigger-event was detected. You can destroy incoming messages that triggered some messages, or pass them through. You can also reorder messages.
+			Starting from the version 3, you can setup calculations in message expressions and use advanced filters with triggers, which combined allows for some very advanced MIDI manipulations and generative workflows.
+		</p>
+		<p>
+			You can specify a delay time in milliseconds so the message is sent a bit later than the trigger-event was detected. You can destroy incoming messages that triggered some messages, or pass them through. You can also reorder messages and disable them still keeping them in the list.
 		</p>
 		<p>
 			In addition to saved states in the host program, the lists of messages in MIDI Messenger can be saved into files, loaded back and transferred between devices.
 		</p>
 		<p>
-			We tried to make the interface as self-explanatory as it could be. So, if you're familiar with MIDI, you should feel yourself quite comfortable. But if you have some questions, we have a walkthrough on <a href=https://go.wrong.band/youtube?utm_source=wstuts target=_blank>our YouTube channel</a>.
+			We hope we managed to make the interface as self-explanatory as it could be. So, if you're familiar with MIDI, you should feel quite comfortable. But if you have some questions, we have a walkthrough on <a href=https://go.wrong.band/youtube?utm_source=wstuts target=_blank>our YouTube channel</a>.
 			<div class=video-container>
 				<iframe width=560 height=315 src=https://www.youtube-nocookie.com/embed/evTDjf38vUs title='MIDI Messenger v1 basics tutorial' frameborder=0 allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; web-share allowfullscreen'></iframe>
 			</div>
@@ -344,10 +346,7 @@
 			<a id=future>Future plans</a>
 		</h3>
 		<p>
-			Currently, we want to add some functionality to <strong>MIDI Messenger</strong>: advanced message altering with math expressions, direct hardware MIDI inputs and outputs, etc. If we see the demand, we're also ready to consider making a VST version for macOS, Windows and Linux.
-		</p>
-		<p>
-			In the background we're working on a very interesting virtual sampling instrument. And if things go really well, there are many hardware music/sound device ideas we have and dream to bring to life in future.
+			Apart from improving MIDI Messenger we're working on a very interesting virtual sampling instrument. And if things go really well, there are many hardware music/sound device ideas we have and dream to bring to life in future.
 		</p>
 		<h3 id=feedback>Feedback?</h3>
 		<p>
